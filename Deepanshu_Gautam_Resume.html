@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepanshu Gautam — Data Analytics Resume</title>
+<meta name="description" content="Deepanshu Gautam — Data Analytics & Business Intelligence resume">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14181C;
+    --ink-soft:#4B5560;
+    --bg:#F5F6F4;
+    --panel:#FFFFFF;
+    --line:#DCE0DD;
+    --accent:#2F6F62;
+    --accent-soft:#E6EEE9;
+    --chip:#EFF2EF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;}
+  a:hover{border-bottom-color:var(--accent);}
+  .sheet{
+    max-width:760px;
+    margin:0 auto;
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:56px 56px 64px;
+  }
+  @media (max-width:640px){
+    .sheet{padding:32px 22px 40px; border-left:none; border-right:none;}
+  }
+
+  /* ---------- Header ---------- */
+  header{margin-bottom:28px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 10px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:42px;
+    letter-spacing:-0.01em;
+    margin:0 0 6px;
+    color:var(--ink);
+  }
+  .role{
+    font-size:16px;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+  }
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  .contact a{color:var(--ink-soft);}
+  .contact a:hover{color:var(--accent); border-bottom-color:var(--accent);}
+
+  /* ---------- KPI strip (signature element) ---------- */
+  .kpis{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:24px;
+  }
+  .kpi{
+    background:var(--panel);
+    padding:14px 12px;
+    text-align:left;
+  }
+  .kpi .n{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:22px;
+    color:var(--accent);
+    display:block;
+  }
+  .kpi .l{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+  }
+  @media (max-width:640px){
+    .kpis{grid-template-columns:repeat(2,1fr);}
+  }
+
+  /* ---------- Sections ---------- */
+  section{margin-top:34px;}
+  h2{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 14px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--line);
+  }
+  .entry{margin-bottom:18px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .entry-title{
+    font-weight:600;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .entry-sub{
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+  .entry-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  ul.bullets{
+    margin:8px 0 0;
+    padding-left:18px;
+  }
+  ul.bullets li{
+    margin-bottom:5px;
+    font-size:14px;
+    color:var(--ink);
+  }
+  ul.bullets li::marker{color:var(--accent);}
+
+  /* ---------- Skills ---------- */
+  .skill-row{
+    display:flex;
+    gap:10px 12px;
+    flex-wrap:wrap;
+    margin-top:6px;
+  }
+  .skill-group{margin-bottom:14px;}
+  .skill-group:last-child{margin-bottom:0;}
+  .skill-label{
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    background:var(--chip);
+    color:var(--ink);
+    padding:4px 10px;
+    border-radius:3px;
+    border:1px solid var(--line);
+  }
+
+  /* ---------- Projects ---------- */
+  .project{
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:16px 18px;
+    margin-bottom:14px;
+  }
+  .project:last-child{margin-bottom:0;}
+  .project-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:4px;
+  }
+  .project-title{font-weight:600; font-size:14.5px;}
+  .project-stack{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--accent);
+    background:var(--accent-soft);
+    padding:2px 8px;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .project-link{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    display:inline-block;
+    margin-bottom:8px;
+  }
+
+  /* ---------- Strengths ---------- */
+  .strengths{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:14px;
+  }
+  @media (max-width:640px){
+    .strengths{grid-template-columns:1fr;}
+  }
+  .strength .t{
+    font-weight:600;
+    font-size:13.5px;
+    color:var(--accent);
+    margin-bottom:3px;
+  }
+  .strength .d{
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  footer{
+    margin-top:40px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    text-align:center;
+  }
+
+  @media print{
+    body{background:#fff;}
+    .sheet{border:none; padding:0; max-width:100%;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <p class="eyebrow">Data Analytics · Business Intelligence</p>
+    <h1>Deepanshu Gautam</h1>
+    <p class="role">BBA Graduate — Python · SQL · Power BI · Excel</p>
+    <div class="contact">
+      <a href="mailto:rishabgautam9359@gmail.com">rishabgautam9359@gmail.com</a>
+      <span>+91-73109-54774</span>
+      <a href="https://github.com/deep-9359" target="_blank" rel="noopener">github.com/deep-9359</a>
+      <span>Meerut, Uttar Pradesh</span>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><span class="n">6</span><span class="l">Portfolio Projects</span></div>
+      <div class="kpi"><span class="n">4</span><span class="l">Core Tools</span></div>
+      <div class="kpi"><span class="n">7.4</span><span class="l">CGPA / 10</span></div>
+      <div class="kpi"><span class="n">A</span><span class="l">Diploma Grade</span></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p style="font-size:14px; margin:0; color:var(--ink);">
+      Motivated BBA graduate with a strong foundation in data analytics, business intelligence, and
+      data-driven decision making. Proficient in Python, SQL, Power BI, and Excel, with hands-on project
+      experience spanning telecom churn analysis, retail sales forecasting, and e-commerce BI dashboards.
+      Certified in Data Analytics and passionate about transforming raw data into actionable business
+      insights. Actively seeking an entry-level data analyst role to contribute analytical skills within a
+      growth-oriented team.
+    </p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Bachelor of Business Administration (BBA)</span>
+        <span class="entry-date">Aug 2023 – May 2026</span>
+      </div>
+      <div class="entry-sub">Vidya University, Meerut, Uttar Pradesh · CGPA 7.4 / 10.0</div>
+      <ul class="bullets">
+        <li>Relevant coursework: Business Statistics, Management Information Systems, Financial Analysis, Principles of Marketing</li>
+        <li>Focused on quantitative methods and data-driven business strategy throughout the program</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Diploma in Computer Fundamentals, Windows &amp; Data Analyst</span>
+        <span class="entry-date">Apr 2025 – Sep 2025</span>
+      </div>
+      <div class="entry-sub">CADPRO Computer Institute, Meerut · ISO 9001:2008 Certified · Govt. of India (MSME) Registered · Grade: A</div>
+      <ul class="bullets">
+        <li>Completed an intensive 5-month diploma covering Advanced Excel, Python 3, SQL, and Power BI — directly aligned with core data analytics tools used in industry</li>
+        <li>Gained hands-on training in data cleaning, analysis, and visualization through practical modules in Excel (PivotTables, advanced formulas), Python scripting, SQL querying, and Power BI dashboard building</li>
+        <li>Achieved Grade A, demonstrating strong command over all modules across the program</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">GenAI Powered Data Analytics Job Simulation</span>
+        <span class="entry-date">June 2026</span>
+      </div>
+      <div class="entry-sub">Tata Group · Issued by Forage · Verification Code: rT7ge4Gm8b2W7ra8S</div>
+      <ul class="bullets">
+        <li>Completed an industry-simulated data analytics program by Tata Group covering exploratory data analysis, risk profiling, and AI-driven delinquency prediction</li>
+        <li>Developed a business report and data storytelling deliverable for a collections strategy, and implemented an AI-driven collections strategy — mirroring real-world analyst responsibilities</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skill-group">
+      <div class="skill-label">Programming &amp; Analytics</div>
+      <div class="skill-row">
+        <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+        <span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">SQL</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-label">BI &amp; Visualization</div>
+      <div class="skill-row">
+        <span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Data Modelling</span>
+        <span class="chip">Excel</span><span class="chip">PivotTables</span><span class="chip">VLOOKUP</span>
+        <span class="chip">Power Query</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-label">Tools &amp; Platforms</div>
+      <div class="skill-row">
+        <span class="chip">Jupyter Notebook</span><span class="chip">Git &amp; GitHub</span><span class="chip">Google Sheets</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-label">Core Skills</div>
+      <div class="skill-row">
+        <span class="chip">EDA</span><span class="chip">Data Cleaning</span><span class="chip">Data Transformation</span>
+        <span class="chip">Business Reporting</span><span class="chip">Data Storytelling</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">Chocolate Sales Performance Dashboard</span>
+        <span class="project-stack">Power BI</span>
+      </div>
+      <a class="project-link" href="https://github.com/deep-9359/Chocolate-sales-Dashboard-" target="_blank" rel="noopener">github.com/deep-9359/Chocolate-sales-Dashboard-</a>
+      <ul class="bullets">
+        <li>Built a comprehensive Power BI dashboard analysing ₹102.57M+ in chocolate sales across multiple countries, products, and sales channels (Online, Retail, Wholesale) — enabling interactive, data-driven decision making for stakeholders</li>
+        <li>Used Power Query for data cleaning and transformation, and DAX to create KPI measures including Total Sales, Marketing Spend (₹19.09M), and Packing Cost — with dynamic filters for channel and country-level drill-down</li>
+        <li>Uncovered key business insights: 70% Dark Bar was the top revenue-generating product, Australia emerged as the highest-performing market, and discount analysis revealed pricing optimisation opportunities across product lines</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">Telecom Customer Churn Analysis</span>
+        <span class="project-stack">Python · Jupyter</span>
+      </div>
+      <a class="project-link" href="https://github.com/deep-9359/Telecom-churn-users-" target="_blank" rel="noopener">github.com/deep-9359/Telecom-churn-users-</a>
+      <ul class="bullets">
+        <li>Performed end-to-end exploratory data analysis (EDA) on a telecom churn dataset to identify key drivers of customer attrition including contract type, tenure, and monthly charges</li>
+        <li>Cleaned and preprocessed raw customer data using Pandas; visualised churn patterns using Seaborn and Matplotlib across demographic and service-usage segments</li>
+        <li>Derived actionable retention insights, identifying that month-to-month contract customers had significantly higher churn probability than long-term subscribers</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">Diwali Sales Analysis</span>
+        <span class="project-stack">Python · Jupyter</span>
+      </div>
+      <a class="project-link" href="https://github.com/deep-9359/Diwali-sales-analysis-" target="_blank" rel="noopener">github.com/deep-9359/Diwali-sales-analysis-</a>
+      <ul class="bullets">
+        <li>Analysed festive season sales data to uncover buying behaviour patterns across gender, age group, state, occupation, and product category</li>
+        <li>Cleaned a multi-column retail dataset and used Pandas groupby and aggregation to rank top-performing states, demographics, and product lines</li>
+        <li>Produced visualisations highlighting that married women aged 26–35 from UP, Maharashtra, and Karnataka in IT/Healthcare roles were the highest-spending segment</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">Coffee Shop Sales Analysis</span>
+        <span class="project-stack">Python · Excel</span>
+      </div>
+      <a class="project-link" href="https://github.com/deep-9359/Coffee-shop-sales-analysis-" target="_blank" rel="noopener">github.com/deep-9359/Coffee-shop-sales-analysis-</a>
+      <ul class="bullets">
+        <li>Conducted sales analysis on a coffee shop dataset to identify revenue trends, peak hours, and bestselling products across multiple store locations</li>
+        <li>Applied data cleaning and time-series aggregation to extract daily, weekly, and monthly revenue patterns to support staffing and promotional planning</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">FNP (Ferns N Petals) Sales Analysis</span>
+        <span class="project-stack">Excel</span>
+      </div>
+      <a class="project-link" href="https://github.com/deep-9359/FNP-Excel-Projects-" target="_blank" rel="noopener">github.com/deep-9359/FNP-Excel-Projects-</a>
+      <ul class="bullets">
+        <li>Built a comprehensive Excel-based sales report for an e-commerce gifting platform, using PivotTables and charts to analyse order volumes, revenue by occasion, and city-level demand</li>
+        <li>Demonstrated proficiency in Excel data modelling, slicers, and conditional formatting to produce a clean, business-ready report</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-title">Online Bookstore Sales &amp; Customer Analysis</span>
+        <span class="project-stack">SQL (MySQL)</span>
+      </div>
+      <a class="project-link" href="https://github.com/deep-9359/SQL-Project" target="_blank" rel="noopener">github.com/deep-9359/SQL-Project</a>
+      <ul class="bullets">
+        <li>Designed and queried a relational database comprising three tables — Books, Customers, and Orders — to analyse sales performance and customer purchasing behaviour for an online bookstore</li>
+        <li>Wrote and structured SQL queries across two levels: basic (filtering, sorting, aggregation) and advanced (JOINs, subqueries, GROUP BY, window functions) to extract business insights</li>
+        <li>Answered key business questions such as top-selling books, high-value customers, revenue by category, and order trends — demonstrating end-to-end SQL analytical capability</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Strengths</h2>
+    <div class="strengths">
+      <div class="strength">
+        <div class="t">Analytical Thinking</div>
+        <div class="d">Translates complex data into clear business narratives</div>
+      </div>
+      <div class="strength">
+        <div class="t">Self-Starter</div>
+        <div class="d">Built a diverse analytics portfolio independently through self-driven learning</div>
+      </div>
+      <div class="strength">
+        <div class="t">Business Acumen</div>
+        <div class="d">BBA background bridges technical analysis with business strategy</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Last updated · June 2026 · <a href="mailto:rishabgautam9359@gmail.com">Get in touch</a>
+  </footer>
+
+</div>
+</body>
+</html>
